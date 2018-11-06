@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "487794527346",
+    "firebase_url": "https://nichsystem.firebaseio.com",
+    "project_id": "nichsystem",
+    "storage_bucket": "nichsystem.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:487794527346:android:ebbe8d847980ddda",
+        "android_client_info": {
+          "package_name": "com.example.natta.nich"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "487794527346-31r5pfn69pau1se5iuimdjhaehmm73ph.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.natta.nich",
+            "certificate_hash": "5b23031c32c7873708a62abdb7d3f63739989b18"
+          }
+        },
+        {
+          "client_id": "487794527346-q1nreamrsn3fd2l0lvuevhf9o2i996m7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGQ5DbN_V35_6QL9ruGa62Dp3vepq4Q7Q"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "487794527346-q1nreamrsn3fd2l0lvuevhf9o2i996m7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

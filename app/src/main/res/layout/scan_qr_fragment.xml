@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/barcodeView_SQ"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        tools:context=".view.scanqrcode.ScanQRFragment">
+    <com.journeyapps.barcodescanner.DecoratedBarcodeView
+            android:id="@+id/decorated_barcode_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:zxing_scanner_layout="@layout/custom_qrcode_scaner">
+
+    </com.journeyapps.barcodescanner.DecoratedBarcodeView>
+</FrameLayout>

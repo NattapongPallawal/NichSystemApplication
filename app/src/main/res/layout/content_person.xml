@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:context=".view.myprofile.MyProfileActivity"
+        tools:showIn="@layout/activity_my_profile">
+    <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusableInTouchMode="true">
+
+
+        <TextView
+                android:id="@+id/textView47"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="วันเกิด"
+                app:layout_constraintStart_toStartOf="@+id/textView46"
+                app:layout_constraintTop_toBottomOf="@+id/edt_phoneNum"/>
+
+        <EditText
+                android:id="@+id/edt_birthday"
+                style="@android:style/Widget.Material.EditText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/bg_edit_text2"
+                android:clickable="true"
+                android:ems="10"
+                android:enabled="false"
+                android:focusable="true"
+                android:inputType="textPersonName"
+                android:padding="8dp"
+                android:paddingStart="16dp"
+                android:textColor="@color/colorEditText"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toStartOf="@+id/btn_pick_date"
+                app:layout_constraintStart_toStartOf="@+id/textView47"
+                app:layout_constraintTop_toBottomOf="@+id/textView47"/>
+
+        <TextView
+                android:id="@+id/textView46"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="เบอร์โทรศัพท์"
+                app:layout_constraintStart_toStartOf="@+id/textView45"
+                app:layout_constraintTop_toBottomOf="@+id/edt_personID"/>
+
+        <EditText
+                android:id="@+id/edt_phoneNum"
+                style="@android:style/Widget.Material.EditText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/bg_edit_text2"
+                android:ems="10"
+                android:enabled="false"
+                android:inputType="numberDecimal"
+                android:padding="8dp"
+                android:paddingStart="16dp"
+                android:textColor="@color/colorEditText"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/textView46"
+                app:layout_constraintTop_toBottomOf="@+id/textView46"/>
+
+        <TextView
+                android:id="@+id/textView45"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="เลขบัตรประชาชน"
+                app:layout_constraintStart_toStartOf="@+id/textView44"
+                app:layout_constraintTop_toBottomOf="@+id/edt_email"/>
+
+        <EditText
+                android:id="@+id/edt_personID"
+                style="@android:style/Widget.Material.EditText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/bg_edit_text2"
+                android:ems="10"
+                android:enabled="false"
+                android:inputType="numberDecimal"
+                android:padding="8dp"
+                android:paddingStart="16dp"
+                android:textColor="@color/colorEditText"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/textView45"
+                app:layout_constraintTop_toBottomOf="@+id/textView45"/>
+
+        <TextView
+                android:id="@+id/textView44"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Email"
+                app:layout_constraintStart_toStartOf="@+id/textView43"
+                app:layout_constraintTop_toBottomOf="@+id/edt_firstName"/>
+
+        <EditText
+                android:id="@+id/edt_email"
+                style="@android:style/Widget.Material.EditText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/bg_edit_text2"
+                android:ems="10"
+                android:enabled="false"
+                android:inputType="textEmailAddress"
+                android:padding="8dp"
+                android:paddingStart="16dp"
+                android:textColor="@color/colorEditText"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/textView44"
+                app:layout_constraintTop_toBottomOf="@+id/textView44"/>
+
+        <TextView
+                android:id="@+id/textView41"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:text="ข้อมูลส่วนตัว"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+                android:id="@+id/textView43"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="ชื่อ - นามสกุล"
+                app:layout_constraintStart_toStartOf="@+id/textView41"
+                app:layout_constraintTop_toBottomOf="@+id/textView41"/>
+
+        <EditText
+                android:id="@+id/edt_firstName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_edit_text2"
+                android:ems="10"
+                android:enabled="false"
+                android:inputType="textPersonName"
+                android:padding="8dp"
+                android:paddingStart="16dp"
+                android:textColor="@color/colorEditText"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="@id/guideline4"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/textView43"
+                app:layout_constraintTop_toBottomOf="@+id/textView43"/>
+
+        <TextView
+                android:id="@+id/textView54"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="-"
+                app:layout_constraintBottom_toBottomOf="@+id/edt_firstName"
+                app:layout_constraintStart_toStartOf="@+id/guideline4"
+                app:layout_constraintTop_toTopOf="@+id/edt_firstName"/>
+
+        <android.support.constraint.Guideline
+                android:id="@+id/guideline4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5231144"/>
+
+        <EditText
+
+                android:id="@+id/edt_lastName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/bg_edit_text2"
+                android:ems="10"
+                android:enabled="false"
+                android:inputType="textPersonName"
+                android:padding="8dp"
+                android:paddingStart="16dp"
+                android:textColor="@color/colorEditText"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/textView54"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textView54"
+                app:layout_constraintTop_toTopOf="@+id/textView54"/>
+
+        <ImageButton
+                android:id="@+id/btn_editPerson"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:background="#00ff0000"
+                app:layout_constraintBottom_toBottomOf="@+id/textView41"
+                app:layout_constraintEnd_toStartOf="@+id/btn_savePerson"
+                app:layout_constraintTop_toTopOf="@+id/textView41"
+                app:srcCompat="@drawable/ic_edit"/>
+
+        <ImageButton
+                android:id="@+id/btn_savePerson"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:background="#00ff0000"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/btn_editPerson"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/btn_editPerson"
+                app:srcCompat="@drawable/ic_save"/>
+
+
+        <include
+                android:id="@+id/aa"
+                layout="@layout/content_person_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="32dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edt_birthday"/>
+
+        <ImageButton
+                android:id="@+id/btn_pick_date"
+                style="@android:style/Widget.Material.Light.ImageButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintBottom_toBottomOf="@+id/edt_birthday"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/edt_birthday"
+                app:srcCompat="@drawable/ic_calendar"/>
+
+        <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/saving_person_profile"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginEnd="24dp"
+                app:layout_constraintBottom_toBottomOf="@+id/textView41"
+                app:layout_constraintEnd_toStartOf="@+id/btn_editPerson"
+                app:layout_constraintTop_toTopOf="@+id/textView41"
+                app:lottie_autoPlay="true"
+                app:lottie_fileName="success.json"/>
+
+    </android.support.constraint.ConstraintLayout>
+</android.support.v4.widget.NestedScrollView>

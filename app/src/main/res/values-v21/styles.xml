@@ -1,0 +1,24 @@
+<resources>
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:textViewStyle">@style/PromtTextViewStyle</item>
+        <item name="android:buttonStyle">@style/PromtButtonStyle</item>
+        <item name="android:windowBackground">@color/background</item>
+        <item name="actionBarStyle">@style/MyActionBar</item>
+        <!--<item name="android:statusBarColor">@android:color/transparent</item>-->
+    </style>
+    <style name="PromtTextViewStyle" parent="android:Widget.TextView">
+        <item name="android:fontFamily">@font/mali_regular</item>
+
+    </style>
+
+    <style name="PromtButtonStyle" parent="android:Widget.Holo.Button">
+        <item name="android:fontFamily">@font/mali_regular</item>
+    </style>
+    <style name="MyActionBar" parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
+        <item name="android:background">@drawable/bg_toolbar</item>
+        <!-- Support library compatibility -->
+        <item name="background">@drawable/bg_toolbar</item>
+    </style>
+</resources>

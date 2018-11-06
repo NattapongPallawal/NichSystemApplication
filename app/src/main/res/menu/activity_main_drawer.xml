@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:showIn="navigation_view">
+
+    <group
+            android:id="@+id/nav_group1"
+            android:checkableBehavior="none">
+        <item
+                android:id="@+id/nav_profile"
+                android:icon="@drawable/ic_person"
+                android:orderInCategory="0"
+                android:title="โปรไฟล์ของฉัน" />
+        <item
+                android:id="@+id/nav_order_history"
+                android:icon="@drawable/ic_history"
+                android:orderInCategory="0"
+                android:title="ประวัติการสั่งอาหาร" />
+        <item
+                android:id="@+id/nav_favortie"
+                android:icon="@drawable/ic_favorite"
+                android:orderInCategory="0"
+                android:title="รายการโปรด" />
+        <item
+                android:id="@+id/nav_random"
+                android:icon="@drawable/ic_random"
+                android:orderInCategory="0"
+                android:title="กินอะไรดี" />
+    </group>
+
+    <group
+            android:id="@+id/nav_group2"
+            android:checkableBehavior="none">
+        <item
+                android:id="@+id/nav_setting"
+                android:icon="@drawable/ic_settings"
+                android:orderInCategory="1"
+                android:title="ตั้งค่า"
+                android:visible="false" />
+        <item
+                android:id="@+id/nav_about"
+                android:icon="@drawable/ic_about"
+                android:orderInCategory="1"
+                android:title="เกี่ยวกับแอพพลิเคชั่น" />
+        <item
+                android:id="@+id/nav_osl"
+                android:icon="@drawable/ic_osl"
+                android:orderInCategory="1"
+                android:title="Open source library" android:visible="false"/>
+        <item
+                android:id="@+id/nav_logout"
+                android:icon="@drawable/ic_logout"
+                android:orderInCategory="1"
+                android:title="ออกจากระบบ" />
+    </group>
+
+</menu>
