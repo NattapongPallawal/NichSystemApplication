@@ -15,6 +15,7 @@ import android.widget.Toast
 import com.example.natta.nich.R
 import com.example.natta.nich.view.food.FoodActivity
 import com.example.natta.nich.viewmodel.ScanQRCodeViewModel
+import com.google.firebase.database.DatabaseException
 import com.karumi.dexter.Dexter
 import com.karumi.dexter.PermissionToken
 import com.karumi.dexter.listener.PermissionDeniedResponse
@@ -83,64 +84,88 @@ class ScanQRCodeActivity : AppCompatActivity(), ScanQRFragment.ScanQRCodeResultL
         if (check) {
             check = false
             val r = result.split(",")
-            model.getRestaurantName(r.first(), r.last())
-            model.ready.observe(this, Observer {
-                if (it != null) {
-                    if (it) {
-                        if (model.tableStatus) {
-                            val builder = AlertDialog.Builder(this@ScanQRCodeActivity)
-                            builder.setTitle("คำเตือน")
-                            builder.setCancelable(false)
-                            builder.setMessage(
-                                "ร้าน ${model.restaurantName} โต๊ะ ${model.tableName} \n" +
-                                        "คุณสามารถสั่ง/เพิ่มออเดอร์  ได้จากบัญชีผู้ใช้คุณเท่านั้น " +
-                                        "ไม่สามารถให้ผู้ร่วมโต๊ะ สั่ง/เพิ่มออเดอร์ ได้จากบัญชีผู้ใช้อื่น"
-                            )
-                            builder.setPositiveButton("ตกลง") { _, _ ->
-                                val i = Intent(this, FoodActivity::class.java)
-                                i.putExtra("resKey", r.first())
-                                editor!!.putString("TABLE", r.last())
-                                editor!!.commit()
-                                startActivity(i)
-                                finish()
+            try {
+                model.getRestaurantName(r.first(), r.last())
+                model.ready.observe(this, Observer {
+                    if (it != null) {
+                        if (it) {
+                            if (model.tableStatus) {
+                                val builder = AlertDialog.Builder(this@ScanQRCodeActivity)
+                                builder.setTitle("คำเตือน")
+                                builder.setCancelable(false)
+                                builder.setMessage(
+                                    "ร้าน ${model.restaurantName} โต๊ะ ${model.tableName} \n" +
+                                            "คุณสามารถสั่ง/เพิ่มออเดอร์  ได้จากบัญชีผู้ใช้คุณเท่านั้น " +
+                                            "ไม่สามารถให้ผู้ร่วมโต๊ะ สั่ง/เพิ่มออเดอร์ ได้จากบัญชีผู้ใช้อื่น"
+                                )
+                                builder.setPositiveButton("ตกลง") { _, _ ->
+                                    val i = Intent(this, FoodActivity::class.java)
+                                    i.putExtra("resKey", r.first())
+                                    editor!!.putString("TABLE", r.last())
+                                    editor!!.commit()
+                                    startActivity(i)
+                                    finish()
 
-                            }
-                            builder.setNegativeButton("ยกเลิก") { dialog, _ ->
-                                dialog.dismiss()
-                                finish()
-                            }
-                            val dialog = builder.create()
-                            dialog.show()
-                            dialog.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(Color.RED)
-                            dialog.getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor(Color.GRAY)
-                        } else {
-                            val builder = AlertDialog.Builder(this@ScanQRCodeActivity)
-                            builder.setTitle("คำเตือน")
-                            builder.setCancelable(false)
-                            builder.setMessage(
-                                "ร้าน ${model.restaurantName} โต๊ะ ${model.tableName} \nขออภัยโต๊ะนี้ไม่ว่าง กรุณาเลือกโต๊ะใหม่"
-                            )
-                            builder.setPositiveButton("ตกลง") { dialog, _ ->
-                                dialog.dismiss()
+                                }
+                                builder.setNegativeButton("ยกเลิก") { dialog, _ ->
+                                    dialog.dismiss()
+                                    finish()
+                                }
+                                val dialog = builder.create()
+                                dialog.show()
+                                dialog.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(Color.RED)
+                                dialog.getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor(Color.GRAY)
+                            } else {
+                                val builder = AlertDialog.Builder(this@ScanQRCodeActivity)
+                                builder.setTitle("คำเตือน")
+                                builder.setCancelable(false)
+                                builder.setMessage(
+                                    "ร้าน ${model.restaurantName} โต๊ะ ${model.tableName} \nขออภัยโต๊ะนี้ไม่ว่าง กรุณาเลือกโต๊ะใหม่"
+                                )
+                                builder.setPositiveButton("ตกลง") { dialog, _ ->
+                                    dialog.dismiss()
 //                                check = true
-                                finish()
-                            }
-                            builder.setNegativeButton("ยกเลิก") { dialog, _ ->
-                                dialog.dismiss()
-                                finish()
-                            }
+                                    finish()
+                                }
+                                builder.setNegativeButton("ยกเลิก") { dialog, _ ->
+                                    dialog.dismiss()
+                                    finish()
+                                }
 
-                            val dialog = builder.create()
-                            dialog.show()
-                            dialog.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(Color.RED)
-                            dialog.getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor(Color.GRAY)
+                                val dialog = builder.create()
+                                dialog.show()
+                                dialog.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(Color.RED)
+                                dialog.getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor(Color.GRAY)
+
+                            }
 
                         }
-
                     }
+                })
+            } catch (e: DatabaseException) {
+                val builder = AlertDialog.Builder(this@ScanQRCodeActivity)
+                builder.setTitle("คำเตือน")
+                builder.setCancelable(false)
+                builder.setMessage(
+                    "QR Code ไม่ถูกต้อง กรุณาสแกนใหม่อีกครั้ง"
+                )
+                builder.setPositiveButton("ตกลง") { dialog, _ ->
+                    dialog.dismiss()
+//                                check = true
+                    finish()
                 }
-            })
+                builder.setNegativeButton("ยกเลิก") { dialog, _ ->
+                    dialog.dismiss()
+                    finish()
+                }
 
+                val dialog = builder.create()
+                dialog.show()
+                dialog.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(Color.RED)
+                dialog.getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor(Color.GRAY)
+
+                check = true
+            }
 
         }
     }
