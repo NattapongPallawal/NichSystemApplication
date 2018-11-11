@@ -42,7 +42,7 @@ class ScanQRFragment : Fragment(), DecoratedBarcodeView.TorchListener {
                 return
             }
             listener.onResult(result.text)
-            r = result.text
+           // r = result.text
         }
 
 

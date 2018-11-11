@@ -124,7 +124,7 @@ class ScanQRCodeActivity : AppCompatActivity(), ScanQRFragment.ScanQRCodeResultL
                                 )
                                 builder.setPositiveButton("ตกลง") { dialog, _ ->
                                     dialog.dismiss()
-//                                check = true
+                                   // check = true
                                     finish()
                                 }
                                 builder.setNegativeButton("ยกเลิก") { dialog, _ ->
@@ -151,8 +151,9 @@ class ScanQRCodeActivity : AppCompatActivity(), ScanQRFragment.ScanQRCodeResultL
                 )
                 builder.setPositiveButton("ตกลง") { dialog, _ ->
                     dialog.dismiss()
+                    check = true
 //                                check = true
-                    finish()
+                    // finish()
                 }
                 builder.setNegativeButton("ยกเลิก") { dialog, _ ->
                     dialog.dismiss()
@@ -164,7 +165,7 @@ class ScanQRCodeActivity : AppCompatActivity(), ScanQRFragment.ScanQRCodeResultL
                 dialog.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(Color.RED)
                 dialog.getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor(Color.GRAY)
 
-                check = true
+
             }
 
         }
